@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
+<head>  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مدرسة الواحات البحرية الزراعية</title>
@@ -23,14 +23,41 @@
         <li><a href="#about">عن المدرسة</a></li>
         <li><a href="#departments">الأقسام</a></li>
         <li><a href="#news">الأخبار</a></li>
+        <li><a href="#products">المنتجات</a></li>
         <li><a href="#contact">اتصل بنا</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
       <button class="search-btn" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
+
+  <!-- القائمة الجانبية للموبايل -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <img src="image/file_00000000a43dd6.png" alt="شعار المدرسة">
+        <span>مدرسة الواحات البحرية</span>
+      </div>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#" class="mobile-link active"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#about" class="mobile-link"><i class="fa-solid fa-school"></i> عن المدرسة</a>
+      <a href="#departments" class="mobile-link"><i class="fa-solid fa-layer-group"></i> الأقسام الأكاديمية</a>
+      <a href="#news" class="mobile-link"><i class="fa-solid fa-newspaper"></i> أحدث الأخبار</a>
+      <a href="#products" class="mobile-link"><i class="fa-solid fa-basket-shopping"></i> منتجات المدرسة</a>
+      <a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> اتصل بنا</a>
+    </nav>
+  </aside>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
 
   <main>
     <!-- 2. قسم البطل (Hero Section) -->
@@ -38,7 +65,6 @@
       <div class="hero-content">
         <p class="hero-subtitle">مرحباً بكم في المدرسة الثانوية الزراعية الفنية بالواحات البحرية</p>
         <h1>مستقبل الزراعة يبدأ من هنا</h1>
-        <a href="#" class="btn-primary"><i class="fa-solid fa-compass"></i> جولة افتراضية</a>
       </div>  
 
       <div class="hero-image-wrapper">
@@ -48,7 +74,7 @@
 
     <!-- 3. قسم عن المدرسة -->
     <section class="whay-hos" id="about">
-      <h2 class="section-title-main"><span>عن مدرسة الواحات </span>البحرية</h2>
+      <h2 class="section-title-main"><span>عن المدرسة</span></h2>
       <div class="card-hos-grid">
         <div class="card-hos">
            <div class="header-card-icon">
@@ -82,112 +108,113 @@
       </div>
     </section> 
 
-    <!-- 4. قسم الأقسام الأكاديمية -->
+    <!-- 4. قسم الأقسام الأكاديمية (مع دعم السلايدر) -->
     <section class="department-section" id="departments">
        <h2 class="section-title-main"><span>أقسامنا </span>الأكاديمية</h2>
 
-       <div class="contaienr-department">
-          <!-- CARD 1 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790534952009.jpg" alt="فني نخيل">
-             </div>
-             <div class="card-text-department">
-                <h4>فني نخيل</h4>
-                <p class="dept-status status-active">● نشط</p>
-             </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790535037232.jpg" alt="محاصيل حقلية">
-             </div>
-             <div class="card-text-department">
-                <h4>محاصيل الحقلية</h4>
-                <p class="dept-status status-soon">قريباً</p>
-             </div>
-          </div>
+       <div class="carousel-wrapper">
+          <button class="carousel-arrow prev" id="deptPrev" aria-label="السابق"><i class="fa-solid fa-chevron-right"></i></button>
           
-          <!-- CARD 3 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790535132715.jpg" alt="إنتاج حيواني">
-             </div>
-             <div class="card-text-department">
-                <h4>إنتاج حيواني</h4>
-                <p class="dept-status status-soon">قريباً</p>
-             </div>
+          <div class="contaienr-department carousel-track" id="deptTrack">
+            <!-- CARD 1 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790534952009.jpg" alt="فني نخيل">
+               </div>
+               <div class="card-text-department">
+                  <h4>فني نخيل</h4>
+                  <p class="dept-status status-active">● نشط</p>
+               </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790535037232.jpg" alt="محاصيل حقلية">
+               </div>
+               <div class="card-text-department">
+                  <h4>محاصيل الحقلية</h4>
+                  <p class="dept-status status-soon">قريباً</p>
+               </div>
+            </div>
+            
+            <!-- CARD 3 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790535132715.jpg" alt="إنتاج حيواني">
+               </div>
+               <div class="card-text-department">
+                  <h4>إنتاج حيواني</h4>
+                  <p class="dept-status status-soon">قريباً</p>
+               </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790535097477.jpg" alt="إنتاج داجني">
+               </div>
+               <div class="card-text-department">
+                  <h4>إنتاج داجني</h4>
+                  <p class="dept-status status-soon">قريباً</p>
+               </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790534878436.jpg" alt="صناعات غذائية">
+               </div>
+               <div class="card-text-department">
+                  <h4>صناعات غذائية</h4>
+                  <p class="dept-status status-active">● نشط</p>
+               </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790534846420.jpg" alt="الألبان">
+               </div>
+               <div class="card-text-department">
+                  <h4>تكنولوجيا الألبان</h4>
+                  <p class="dept-status status-soon">قريباً</p>
+               </div>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790534775287.jpg" alt="تربية النحل">
+               </div>
+               <div class="card-text-department">
+                  <h4>نحل وإنتاج العسل</h4>
+                  <p class="dept-status status-soon">قريباً</p>
+               </div>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="card-department carousel-card">
+               <div class="card-image-department">
+                 <img src="image/1790535001708.jpg" alt="ورش وصيانة">
+               </div>
+               <div class="card-text-department">
+                  <h4>ورش وصيانة ميكانيكية</h4>
+                  <p class="dept-status status-soon">قريباً</p>
+               </div>
+            </div>
           </div>
 
-          <!-- CARD 4 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790535097477.jpg" alt="إنتاج داجني">
-             </div>
-             <div class="card-text-department">
-              <h4>إنتاج داجني</h4>
-                <p class="dept-status status-soon">قريباً</p>
-             </div>
-          </div>
-
-          <!-- CARD 5 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790534878436.jpg" alt="صناعات غذائية">
-             </div>
-             <div class="card-text-department">
-              <h4>صناعات غذائية</h4>
-                <p class="dept-status status-active">● نشط</p>
-             </div>
-          </div>
-
-          <!-- CARD 6 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790534846420.jpg" alt="الألبان">
-             </div>
-             <div class="card-text-department">
-              <h4>تكنولوجيا الألبان</h4>
-                <p class="dept-status status-soon">قريباً</p>
-             </div>
-          </div>
-
-          <!-- CARD 7 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790534775287.jpg" alt="تربية النحل">
-             </div>
-             <div class="card-text-department">
-              <h4>نحل وإنتاج العسل</h4>
-                <p class="dept-status status-soon">قريباً</p>
-             </div>
-          </div>
-
-          <!-- CARD 8 -->
-          <div class="card-department">
-             <div class="card-image-department">
-               <img src="image/1790535001708.jpg" alt="ورش وصيانة">
-             </div>
-             <div class="card-text-department">
-                <h4>ورش وصيانة ميكانيكية</h4>
-                <p class="dept-status status-soon">قريباً</p>
-             </div>
-          </div>
-
-          </div>
-         
-
-      
+          <button class="carousel-arrow next" id="deptNext" aria-label="التالي"><i class="fa-solid fa-chevron-left"></i></button>
+       </div>
     </section>
 
     <!-- 5. قسم أحدث الأخبار -->
     <section class="latest-news" id="news">
       <div class="container">
-        <h2 class="section-title-main"><span>أحدث الأخبار </span>والمدونة</h2>
+        <h2 class="section-title-main"><span>أحدث الأخبار </span></h2>
 
         <div class="news-cards-grid">
-          <!-- الكارت الأول -->
           <article class="news-card">
             <div class="card-image">
               <img src="image/1791144164793.jpg" alt="زراعة صنف جديد من الطماطم">
@@ -201,7 +228,6 @@
             </div>
           </article>
 
-          <!-- الكارت الثاني -->
           <article class="news-card">
             <div class="card-image">
               <img src="image/1791144248221.jpg" alt="ورشة عمل زراعية">
@@ -215,7 +241,6 @@
             </div>
           </article>
 
-          <!-- الكارت الثالث -->
           <article class="news-card">
             <div class="card-image">
               <img src="image/1791144310053.jpg" alt="ابتكار طالب">
@@ -232,189 +257,147 @@
       </div>
     </section>
     
-    <!--- products section ---->
-  <section class="products-section">
-  <div class="section-header">
-    <h2 class="section-title">منتجات المدرسة</h2>
-    <p class="section-subtitle">منتجات زراعية وغذائية عالية الجودة من إنتاج طلابنا</p>
-  </div>
-
-  <div class="product-grid">
-    
-    <!-- Product Card 1 -->
-    <div class="product-card">
-      <div class="product-image-container">
-        <img src="image/1791318974563.jpg" alt="بلح" class="product-image">
-       <!-- <span class="product-badge">طبيعي 100%</span> -->
+    <!-- 6. قسم المنتجات (مع دعم السلايدر) -->
+    <section class="products-section" id="products">
+      <div class="section-header">
+        <h2 class="section-title-main"><span>منتجات </span>المدرسة</h2>
+        <p class="section-subtitle">منتجات زراعية وغذائية عالية الجودة من إنتاج طلابنا</p>
       </div>
-      
-      <div class="product-info">
-        <h3 class="product-title">بلح وحاتي فاخر</h3>
-        <p class="product-description">إنتاج مزرعة المدرسة - علبة 1 كيلو</p>
-        
-        <div class="product-details">
-          <span class="product-price">250 ج.م</span>
-          <span class="product-rating product-rating-live">متوفر</span>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow prev" id="prodPrev" aria-label="السابق"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="product-grid carousel-track" id="prodTrack">
+          <div class="product-card carousel-card">
+            <div class="product-image-container">
+              <img src="image/1791318974563.jpg" alt="بلح" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">بلح وحاتي فاخر</h3>
+              <p class="product-description">إنتاج مزرعة المدرسة - علبة 1 كيلو</p>
+              <div class="product-details">
+                <span class="product-price">250 ج.م</span>
+                <span class="product-rating product-rating-live">متوفر</span>
+              </div>
+              <button class="product-btn">طلب المنتج</button>
+            </div>
+          </div>
+
+          <div class="product-card carousel-card">
+            <div class="product-image-container">
+              <img src="image/1791319217533.jpg" alt="عسل نحل" class="product-image">
+              <span class="product-badge">طبيعي 100%</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">عسل سدر طبيعي</h3>
+              <p class="product-description">إنتاج مناحل المدرسة - برطمان 1 كيلو</p>
+              <div class="product-details">
+                <span class="product-price">600 ج.م</span>
+                <span class="product-rating">غير متوفر</span>
+              </div>
+              <button class="product-btn">طلب المنتج</button>
+            </div>
+          </div>
+
+          <div class="product-card carousel-card">
+            <div class="product-image-container">
+              <img src="image/1791319169448.jpg" alt="جبنة قريش" class="product-image">
+              <span class="product-badge">طبيعي 100%</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">جبنة قريش</h3>
+              <p class="product-description">إنتاج قسم الصناعات الغذائية - عبوة 1 كيلو</p>
+              <div class="product-details">
+                <span class="product-price">400 ج.م</span>
+                <span class="product-rating">غير متوفر</span>
+              </div>
+              <button class="product-btn">طلب المنتج</button>
+            </div>
+          </div>
+
+          <div class="product-card carousel-card">
+            <div class="product-image-container">
+              <img src="image/1791319702175.jpg" alt="مخلل مشكل" class="product-image">
+              <span class="product-badge">طبيعي 100%</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">مخلل مشكل</h3>
+              <p class="product-description">إنتاج قسم الصناعات الغذائية - برطمان 500 جرام</p>
+              <div class="product-details">
+                <span class="product-price">150 ج.م</span>
+                <span class="product-rating">غير متوفر</span>
+              </div>
+              <button class="product-btn">طلب المنتج</button>
+            </div>
+          </div>
+
+          <div class="product-card carousel-card">
+            <div class="product-image-container">
+              <img src="image/1791320167464.jpg" alt="بلح عجوة" class="product-image">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">بلح عجوة</h3>
+              <p class="product-description">إنتاج قسم الصناعات الغذائية - عبوة 1 كيلو</p>
+              <div class="product-details">
+                <span class="product-price">450 ج.م</span>
+                <span class="product-rating product-rating-live">متوفر</span>
+              </div>
+              <button class="product-btn">طلب المنتج</button>
+            </div>
+          </div>
+
+          <div class="product-card carousel-card">
+            <div class="product-image-container">
+              <img src="image/1791319849413.jpg" alt="دبس تمر" class="product-image">
+              <span class="product-badge">طبيعي 100%</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">دبس تمر فاخر</h3>
+              <p class="product-description">إنتاج قسم الصناعات الغذائية - عبوة 500 جرام</p>
+              <div class="product-details">
+                <span class="product-price">350 ج.م</span>
+                <span class="product-rating">غير متوفر</span>
+              </div>
+              <button class="product-btn">طلب المنتج</button>
+            </div>
+          </div>
         </div>
-        
-        <button class="product-btn">
-          طلب المنتج
-        </button>
-      </div>
-    </div>
 
-    <!-- Product Card 2-->
-    <div class="product-card">
-      <div class="product-image-container">
-        <img src="image/1791319217533.jpg" alt="عسل نحل" class="product-image">
-        <span class="product-badge">طبيعي 100%</span>
+        <button class="carousel-arrow next" id="prodNext" aria-label="التالي"><i class="fa-solid fa-chevron-left"></i></button>
       </div>
-      
-      <div class="product-info">
-        <h3 class="product-title">عسل سدر طبيعي</h3>
-        <p class="product-description">إنتاج مناحل المدرسة - برطمان 1 كيلو</p>
-        
-        <div class="product-details">
-          <span class="product-price">600 ج.م</span>
-          <span class="product-rating">غير متوفر</span>
-        </div>
-        
-        <button class="product-btn">
-          طلب المنتج
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Card 3-->
-    <div class="product-card">
-      <div class="product-image-container">
-        <img src="image/1791319169448.jpg" alt="عسل نحل" class="product-image">
-        <span class="product-badge">طبيعي 100%</span>
-      </div>
-      
-      <div class="product-info">
-        <h3 class="product-title">جبنة قريش</h3>
-        <p class="product-description">إنتاج قسم الصناعات الغذائية من المدرسة - عبوة 1 كيلو</p>
-        
-        <div class="product-details">
-          <span class="product-price">400 ج.م</span>
-          <span class="product-rating">غير متوفر</span>
-        </div>
-        
-        <button class="product-btn">
-          طلب المنتج
-        </button>
-      </div>
-    </div>
-
-     <!-- Product Card 4-->
-    <div class="product-card">
-      <div class="product-image-container">
-        <img src="image/1791319702175.jpg" alt="عسل نحل" class="product-image">
-        <span class="product-badge">طبيعي 100%</span>
-      </div>
-      
-      <div class="product-info">
-        <h3 class="product-title">مخلل مشكل</h3>
-        <p class="product-description">إنتاج قسم الصناعات الغذائية من المدرسة - برطمتن 500 جرام</p>
-        
-        <div class="product-details">
-          <span class="product-price">150 ج.م</span>
-          <span class="product-rating">غير متوفر</span>
-        </div>
-        
-        <button class="product-btn">
-          طلب المنتج
-        </button>
-      </div>
-    </div>
-
- <!-- Product Card 5-->
-    <div class="product-card">
-      <div class="product-image-container">
-        <img src="image/1791320167464.jpg" alt="عسل نحل" class="product-image">
-       <!-- <span class="product-badge">طبيعي 100%</span> -->
-      </div>
-      
-      <div class="product-info">
-        <h3 class="product-title">بلح عجوة</h3>
-        <p class="product-description">إنتاج قسم الصناعات الغذائية من المدرسة - عبوة 1 كيلو</p>
-        
-        <div class="product-details">
-          <span class="product-price">450 ج.م</span>
-          <span class="product-rating product-rating-live">متوفر</span>
-        </div>
-        
-        <button class="product-btn">
-          طلب المنتج
-        </button>
-      </div>
-    </div>
-
- <!-- Product Card 6-->
-    <div class="product-card">
-      <div class="product-image-container">
-        <img src="image/1791319849413.jpg" alt="عسل نحل" class="product-image">
-        <span class="product-badge">طبيعي 100%</span>
-      </div>
-      
-      <div class="product-info">
-        <h3 class="product-title">دبس تمر فاخر</h3>
-        <p class="product-description">إنتاج قسم الصناعات الغذائية من المدرسة - عبوة 500 جرام</p>
-        
-        <div class="product-details">
-          <span class="product-price">350 ج.م</span>
-          <span class="product-rating">غير متوفر</span>
-        </div>
-        
-        <button class="product-btn">
-          طلب المنتج
-        </button>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
-
+    </section>
   </main>
 
-  <!-- 6. الفوتر Modern Footer -->
+  <!-- 7. الفوتر Modern Footer -->
   <footer class="main-footer" id="contact">
     <div class="footer-container">
       <div class="footer-info">
         <h3>مدرسة الواحات البحرية الزراعية</h3>
         <p>صرح تعليمي وفني يهدف لإعداد جيل من المهندسين والفنيين الزراعيين المؤهلين لسوق العمل الحديث.</p>
       </div>
+      
       <div class="footer-links">
         <h4>تواصل معنا</h4>
-        <div class="links-me">
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://wa.me/201000000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="tel:01000000000" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
-        </div>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/201000000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:01000000000" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
         </div>
       </div>
-      <div class="footer-social">
-        <h4>برمجة و تطوير</h4>
-        <div class="footer-links">
-            <ul>
-              <span>الطالب/ </span>
-              <li><a href="https://wa.me/201060229379">أمير سعادة زين العابدين</a></li>
-            </ul>
-        </div>
 
-        <div class="social-icons">
-          <a href="#" target="_blank" aria-label="Githup"><i class="fa-brands fa-github"></i></a>
-          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          
-         <!-- <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a> -->
+      <div class="footer-social">
+        <h4>برمجة وتطوير</h4>
+        <div class="developer-info">
+          <span>الطالب: </span>
+          <a href="https://wa.me/201060229379" target="_blank">أمير سعادة زين العابدين</a>
         </div>
-       
+        <div class="social-icons mt-10">
+          <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>جميع الحقوق محفوظة &copy; 2026 - مدرسة الواحات البحرية الزراعية</p>
     </div>
