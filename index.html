@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body> 
    
   <!-- 1. الهيدر والشريط العلوي -->
   <header class="main-header">
@@ -210,52 +210,54 @@
     </section>
 
     <!-- 5. قسم أحدث الأخبار -->
-    <section class="latest-news" id="news">
-      <div class="container">
-        <h2 class="section-title-main"><span>أحدث الأخبار </span></h2>
+<section class="latest-news" id="news">
+  <div class="container">
+    <h2 class="section-title-main"><span>أحدث الأخبار </span></h2>
 
-        <div class="news-cards-grid">
-          <article class="news-card">
-            <div class="card-image">
-              <img src="image/1791144164793.jpg" alt="زراعة صنف جديد من الطماطم">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">نجاح زراعة صنف جديد من الطماطم</h3>
-              <p class="card-excerpt">
-                تم بحمد الله تجربة زراعة صنف حديث يتكيف مع الظروف المناخية في الصوب الزراعية بالواحات...
-              </p>
-              <a href="#" class="btn-read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <div class="card-image">
-              <img src="image/1791144248221.jpg" alt="ورشة عمل زراعية">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">ورشة عمل عن صيانة الشبكات الهيدروليكية</h3>
-              <p class="card-excerpt">
-                تفاصيل الورشة العملية الخاصة بطلاب قسم الميكنة والتكنولوجيا الزراعية المتقدمة...
-              </p>
-              <a href="#" class="btn-read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <div class="card-image">
-              <img src="image/1791144310053.jpg" alt="ابتكار طالب">
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">ابتكار طالب يحل نظام الري الذكي</h3>
-              <p class="card-excerpt">
-                مشروع ابتكاري يهدف لتوفير مياه الري باستخدام المستشعرات الحديثة وتقنيات التحكم الأوتوماتيكي...
-              </p>
-              <a href="#" class="btn-read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
-            </div>
-          </article>
+    <div class="news-cards-grid">
+      <article class="news-card">
+        <div class="card-image">
+          <img src="image/1791144164793.jpg" alt="زراعة صنف جديد من الطماطم" class="article-img">
         </div>
-      </div>
-    </section>
+        <div class="card-content">
+          <h3 class="card-title">نجاح زراعة صنف جديد من الطماطم</h3>
+          <p class="card-excerpt">
+            تم بحمد الله تجربة زراعة صنف حديث يتكيف مع الظروف المناخية في الصوب الزراعية بالواحات...
+          </p>
+          <!-- تم ربط الزر بصفحة article.html مع تمرير البيانات -->
+          <a href="article.html?title=نجاح%20زراعة%20صنف%20جديد%20من%20الطماطم&img=image/1791144164793.jpg&desc=تم%20بحمد%20الله%20تجربة%20زراعة%20صنف%20حديث%20يتكيف%20مع%20الظروف%20المناخية%20في%20الصوب%20الزراعية%20بالواحات%20البحرية،%20وقد%20أظهرت%20النتائج%20الأولية%20نجاحاً باهراً%20في%20معدلات%20النمو%20والإنتاجية،%20مما%20يبشر بموسم%20زراعي%20ممتاز%20يدعم%20المنطقة%20ويوفر%20محاصيل%20عالية%20الجودة." class="btn-read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="card-image">
+          <img src="image/1791144248221.jpg" alt="ورشة عمل زراعية" class="article-img">
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">ورشة عمل عن صيانة الشبكات الهيدروليكية</h3>
+          <p class="card-excerpt">
+            تفاصيل الورشة العملية الخاصة بطلاب قسم الميكنة والتكنولوجيا الزراعية المتقدمة...
+          </p>
+          <a href="article.html?title=ورشة%20عمل%20عن%20صيانة%20الشبكات%20الهيدروليكية&img=image/1791144248221.jpg&desc=أقيمت%20اليوم%20ورشة%20عمل%20مكثفة%20بقسم%20الميكنة%20والتكنولوجيا%20الزراعية%20المتقدمة%20تناولت%20أحدث%20طرق%20صيانة%20الشبكات%20الهيدروليكية%20المستخدمة%20في%20أنظمة%20الري%20الحديثة،%20حيث%20شارك%20الطلاب%20بشكل%20عملي%20في%20فحص%20وصيانة%20المضخات%20والصمامات." class="btn-read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="card-image">
+          <img src="image/1791144310053.jpg" alt="ابتكار طالب" class="article-img">
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">ابتكار طالب يحل نظام الري الذكي</h3>
+          <p class="card-excerpt">
+            مشروع ابتكاري يهدف لتوفير مياه الري باستخدام المستشعرات الحديثة وتقنيات التحكم الأوتوماتيكي...
+          </p>
+          <a href="article.html?title=ابتكار%20طالب%20يحل%20نظام%20الري%20الذكى&img=image/1791144310053.jpg&desc=في%20إطار%20دعم%20الابتكار%20والبحث%20العلمي،%20نجح%20أحد%20طلاب%20المدرسة%20في%20تصميم%20مشروع%20ابتكاري%20يهدف%20لتوفير%20مياه%20الري%20باستخدام%20المستشعرات%20الحديثة%20وتقنيات%20التحكم%20الأوتوماتيكي%20عن%20طريق%20إنترنت%20الأشياء،%20مما%20يساهم%20في%20ترشيد%20استهلاك%20المياه%20بشكل%20كبير." class="btn-read-more">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
     
     <!-- 6. قسم المنتجات (مع دعم السلايدر) -->
     <section class="products-section" id="products">
@@ -379,22 +381,33 @@
       <div class="footer-links">
         <h4>تواصل معنا</h4>
         <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://wa.me/201000000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="tel:01000000000" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://www.facebook.com/share/1E6PLCh8Za/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/201099886366" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:201099886366" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
         </div>
       </div>
 
       <div class="footer-social">
-        <h4>برمجة وتطوير</h4>
+        <h4>اشراف و تطوير</h4>
         <div class="developer-info">
-          <span>الطالب: </span>
-          <a href="https://wa.me/201060229379" target="_blank">أمير سعادة زين العابدين</a>
+
+           <div class="principal-schole">
+             <span>مدير المدرسة: </span>
+             <a href="https://wa.me/201099886366" target="_blank"> ياسر نجيب محمد</a>
+          </div>
+
+          <div class="scourter-schole">
+             <span>الاخصائي الاجتماعي: </span>
+             <a href="https://wa.me/201099886366" target="_blank"> عبد الرحمن مصطفي</a>
+          </div>
+
+          <div class="developer-me">
+            <span>تطوير بواسطة الطالب: </span>
+            <a href="https://wa.me/201060229379" target="_blank"> أمير سعادة زين العابدين</a>
+          </div>
+          
         </div>
-        <div class="social-icons mt-10">
-          <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
+      
       </div>
     </div>
 

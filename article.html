@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل الخبر - مدرسة الواحات البحرية الزراعية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* =========================================================
+       تنسيقات صفحة الخبر الحديثة (Editorial News Layout)
+       ========================================================= */
+
+       body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+       }
+
+       main, .article-single-page{
+        flex-grow: 1;
+       }
+
+    .article-single-page {
+      max-width: 800px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
+    }
+
+    /* حاوي الصورة - بدون إطارات أو ظلال */
+    .article-hero-media {
+      width: 100%;
+      margin-bottom: 30px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .article-hero-media img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* تفاصيل ومحتوى الخبر */
+    .article-body-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* عنوان الخبر الرئيسي */
+    .article-main-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    /* نص الخبر المقروء */
+    .article-text-paragraph {
+      font-size: 1.15rem;
+      color: #333333;
+      line-height: 1.9;
+      font-weight: 400;
+      word-break: break-word;
+    }
+
+    /* زر العودة المخصص */
+    .btn-back-wrapper {
+      margin-top: 15px;
+    }
+
+    .btn-back-news {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 220px; /* العرض المحدد للزر */
+      padding: 12px 20px;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: none;
+      border: none;
+    }
+
+    .btn-back-news:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* تجاوب الشاشات الصغيرة (الموبايل) */
+    @media (max-width: 768px) {
+      .article-single-page {
+        margin: 20px auto 50px auto;
+        padding: 0 16px;
+      }
+
+      .article-hero-media {
+        margin-bottom: 20px;
+      }
+
+      .article-main-title {
+        font-size: 1.65rem;
+        line-height: 1.4;
+      }
+
+      .article-text-paragraph {
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      .btn-back-news {
+        width: 100%; /* على الموبايل يكون بعرض الشاشة لسهولة الضغط */
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body> 
+   
+  <!-- 1. الهيدر والشريط العلوي -->
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="image/file_00000000a43dd6.png" alt="شعار مدرسة الواحات البحرية الزراعية" class="logo" />
+      <h2>مدرسة الواحات <br> البحرية الزراعية</h2>
+    </div>
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#about">عن المدرسة</a></li>
+        <li><a href="index.html#departments">الأقسام</a></li>
+        <li><a href="index.html#news" class="active">الأخبار</a></li>
+        <li><a href="index.html#products">المنتجات</a></li>
+        <li><a href="index.html#contact">اتصل بنا</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-btn" aria-label="بحث"><i class="fa-solid fa-magnifying-glass"></i></button>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- القائمة الجانبية للموبايل -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <img src="image/file_00000000a43dd6.png" alt="شعار المدرسة">
+        <span>مدرسة الواحات البحرية</span>
+      </div>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-link"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="index.html#about" class="mobile-link"><i class="fa-solid fa-school"></i> عن المدرسة</a>
+      <a href="index.html#departments" class="mobile-link"><i class="fa-solid fa-layer-group"></i> الأقسام الأكاديمية</a>
+      <a href="index.html#news" class="mobile-link active"><i class="fa-solid fa-newspaper"></i> أحدث الأخبار</a>
+      <a href="index.html#products" class="mobile-link"><i class="fa-solid fa-basket-shopping"></i> منتجات المدرسة</a>
+      <a href="index.html#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> اتصل بنا</a>
+    </nav>
+  </aside>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- 2. جسم صفحة الخبر الرئيسية -->
+  <main class="article-single-page">
+    <!-- الصورة بعرض كامل وبدون إطارات -->
+    <div class="article-hero-media">
+      <img id="articleImg" src="" alt="صورة الخبر">
+    </div>
+
+    <!-- المحتوى والنصوص -->
+    <article class="article-body-content">
+      <h1 id="articleTitle" class="article-main-title">جاري تحميل العنوان...</h1>
+      
+      <div id="articleDesc" class="article-text-paragraph">
+        جاري تحميل محتوى الخبر...
+      </div>
+
+      <!-- زر العودة للأخبار -->
+      <div class="btn-back-wrapper">
+        <a href="index.html#news" class="btn-back-news">
+            <i class="fa-solid fa-arrow-right"></i>
+            العودة إلى الرئيسية
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <!-- 3. الفوتر -->
+  <footer class="main-footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>مدرسة الواحات البحرية الزراعية</h3>
+        <p>صرح تعليمي وفني يهدف لإعداد جيل من المهندسين والفنيين الزراعيين المؤهلين لسوق العمل الحديث.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>تواصل معنا</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/201000000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:01000000000" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h4>اشراف و تطوير</h4>
+        <div class="developer-info">
+           <div class="principal-schole">
+             <span>مدير المدرسة: </span>
+             <a href="https://wa.me/201099886366" target="_blank"> ياسر نجيب محمد</a>
+          </div>
+          <div class="scourter-schole">
+             <span>الاخصائي الاجتماعي: </span>
+             <a href="https://wa.me/201099886366" target="_blank"> عبد الرحمن مصطفي</a>
+          </div>
+          <div class="developer-me">
+            <span>تطوير بواسطة الطالب: </span>
+            <a href="https://wa.me/201060229379" target="_blank"> أمير سعادة زين العابدين</a>
+          </div>
+        </div>
+        <div class="social-icons mt-10">
+          <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>جميع الحقوق محفوظة &copy; 2026 - مدرسة الواحات البحرية الزراعية</p>
+    </div>
+  </footer>
+
+  <!-- 4. جافاسكريبت الصفحة -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // القائمة الجانبية للموبايل
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const drawerOverlay = document.getElementById('drawerOverlay');
+
+      function toggleDrawer() {
+        menuToggle.classList.toggle('is-active');
+        mobileDrawer.classList.toggle('is-open');
+        drawerOverlay.classList.toggle('is-open');
+      }
+
+      if (menuToggle) menuToggle.addEventListener('click', toggleDrawer);
+      if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+      // استخراج المتغيرات من رابط الصفحة (URL Query Parameters)
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get('title');
+      const img = urlParams.get('img');
+      const desc = urlParams.get('desc');
+
+      if (title) {
+        const decodedTitle = decodeURIComponent(title);
+        document.getElementById('articleTitle').innerHTML = decodedTitle;
+        document.title = decodedTitle + " - مدرسة الواحات البحرية الزراعية";
+      }
+
+      if (img) {
+        document.getElementById('articleImg').src = img;
+      }
+
+      if (desc) {
+        document.getElementById('articleDesc').innerHTML = decodeURIComponent(desc);
+      }
+    });
+  </script>
+</body>
+</html>

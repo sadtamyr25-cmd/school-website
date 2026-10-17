@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cards = track.querySelectorAll('.carousel-card');
 
-    // تحديد الكارت المتواجد في المنتصف وإضافة class للتكبير
     function updateActiveCard() {
       const trackRect = track.getBoundingClientRect();
       const trackCenter = trackRect.left + trackRect.width / 2;
@@ -68,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardCenter = cardRect.left + cardRect.width / 2;
         const distance = Math.abs(trackCenter - cardCenter);
 
-        // إذا كان مركز الكارت قريباً جداً من منتصف الحاوية
         if (distance < cardRect.width / 2) {
           card.classList.add('is-active');
         } else {
@@ -77,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // التنقل باستخدام الأسهم
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         const cardWidth = cards[0].getBoundingClientRect().width;
@@ -92,15 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // متابعة التمرير (Scroll) وإعادة الحساب
     track.addEventListener('scroll', updateActiveCard);
     window.addEventListener('resize', updateActiveCard);
-    
-    // تشغيل الحساب لأول مرة
     updateActiveCard();
   }
 
-  // تهيئة السلايدر للأقسام والمنتجات
   initCarousel('deptTrack', 'deptPrev', 'deptNext');
   initCarousel('prodTrack', 'prodPrev', 'prodNext');
 
@@ -121,6 +114,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (link.getAttribute('href') === `#${currentSection}`) {
         link.classList.add('active');
       }
+    });
+  });
+
+  // 5. ربط أزرار طلب المنتجات بنظام واتساب بشكل احترافي ودقيق لكل كارت
+  const productButtons = document.querySelectorAll('.product-btn');
+  
+  productButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const card = e.target.closest('.product-card');
+      if (!card) return;
+
+      const title = card.querySelector('.product-title').innerText;
+      const price = card.querySelector('.product-price').innerText;
+      
+      const phoneNumber = "201099886366"; // رقم هاتفك
+      const message = `مرحباً، أرغب في طلب الاستفسار عن هذا المنتج:\n- المنتج: ${title}\n- السعر: ${price}\nأرجو التواصل معي لتأكيد الطلب.`;
+      
+      const encodedMessage = encodeURIComponent(message);
+      const whatsAppURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsAppURL, '_blank');
     });
   });
 });
